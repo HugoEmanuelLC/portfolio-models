@@ -1,0 +1,119 @@
+body{
+    background-color: $_color_1;
+}
+
+#root{
+    background-image: url('../assets/foto.jpg');
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+main{
+    background-color: $_color_1_oposite;
+    min-height: 100vh;
+}
+
+.container_{
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.container_structure{
+    // border: solid 1px blue;
+    @include flex(column, center, center);
+    gap: 20px;
+
+    .left, .right{
+        // border: solid 1px red;
+        @include flex(column, center, center);
+        gap: 20px;
+        width: 100%;
+        section{
+            // border: solid 1px $_color_4;
+            background-color: $_color_1_oposite;
+            border-radius: 20px;
+            padding: 20px;
+            width: 100%;
+        }
+    }
+    // .left{
+    //     order: 2;
+    // }
+    @include media-queries(md){
+        @include flex(row, center, flex-start);
+        // gap: 20px;
+        .left{
+            flex: 3;
+            // order: 1;
+        }
+        .right{
+            flex: 1;
+            min-width: 300px;
+            // order: 2;
+        }
+    }
+}
+
+section.big_sections{
+    min-height: 90vh;
+    @include media-queries(md){
+        min-height: auto;
+        margin-bottom: 50px;
+    }
+}
+
+// PUB
+.pub{
+    background-color: $_color_3;
+    overflow: hidden;
+    display: flex;
+    p{
+        // @include border($_color_2);
+        color: $_color_2;
+        text-align: center;
+        padding: 7px 0;
+        font-size: 0.9rem;
+        animation: pub 30s linear infinite;
+
+    }
+}
+@keyframes pub{
+    0%{
+        transform: translateX(+100vw);
+    }
+    100%{
+        transform: translateX(-100%);
+    }
+}
+
+.text{
+    // max-width: 600px;
+    margin: 100px auto;
+    padding: 20px;
+    p{
+        text-align: center;
+    }
+    strong{
+        font-weight: 400;
+    }
+    @include media-queries(md){
+        p{
+            font-size: 2.5rem;
+        }
+    }
+}
+
+// BTN's
+.btn_hover{
+    &:hover{
+        background-color: $_color_3;
+        color: $_color_1;
+    }
+    &:hover i {
+        color: $_color_1;
+    }
+}

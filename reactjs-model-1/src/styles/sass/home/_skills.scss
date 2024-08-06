@@ -1,0 +1,11 @@
+.skills{
+    ul{
+        @include flex(column, center, flex-start);
+        gap: 8px;
+        margin-top: 20px;
+        li{
+            color: $_color_3;
+            border-bottom: 1px solid $_color_3;
+        }
+    }
+}

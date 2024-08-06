@@ -1,0 +1,108 @@
+.hero{
+    // background-color: $_color_1;
+    .container_{
+        @include flex(column, center, center);
+        padding-top: 80px;
+    }
+
+    .hero_left{
+        text-align: center;
+        @include flex(column, center, center);
+        figure{
+            border-radius: 50%;
+            overflow: hidden;
+            width: 150px;
+            height: 150px;
+
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .infos{
+            // border: solid 3px blue;
+            h1{
+                font-size: 3rem;
+                line-height: 1;
+                margin-top: 20px;
+            }
+            h2{
+                font-size: 1.3rem;
+            }
+            .links{
+                margin: 30px 0 0;
+                ul{
+                    @include flex(row, center, center);
+                    gap: 10px;
+                    li{
+                        display: flex;
+                        height: 40px;
+                        width: 40px;
+                        border-radius: 50%;
+                        overflow: hidden;
+                        a{
+                            background-color: $_color_4_oposite;
+                            @include flex(row, center, center);
+                            width: 100%;
+                            height: 100%;
+                            font-size: 1.5rem;
+
+                            i{
+                                color: $_color_2;
+                            }
+
+                            @extend .btn_hover;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .hero_right{
+        button{
+            padding: 10px 20px;
+            // background-color: $_color_3;
+            background-color: $_color_4_oposite;
+            color: $_color_2;
+            border-radius: 5px;
+            margin: 20px 0;
+            font-weight: 400;
+
+            i{
+                font-size: 1.1rem;
+            }
+            
+            @extend .btn_hover;
+        }
+    }
+
+    @include media-queries(md){
+        .container_{
+            @include flex(row, space-between, center);
+            padding: 60px 20px;
+        }
+
+        .hero_left{
+            @include flex(row, space-between, center);
+            text-align: left;
+            // figure{
+            //     width: 200px;
+            //     height: 200px;
+            // }
+            .infos{
+                margin-left: 20px;
+                h1{
+                    margin-top: 0px;
+                }
+                .links{
+                    ul{
+                        @include flex(row, flex-start, center);
+                    }
+                }
+            }
+        }
+    }
+}
