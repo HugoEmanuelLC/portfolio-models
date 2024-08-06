@@ -26,6 +26,7 @@ main{
     // border: solid 1px blue;
     @include flex(column, center, center);
     gap: 20px;
+    flex-wrap: wrap;
 
     .left, .right{
         // border: solid 1px red;
@@ -40,15 +41,12 @@ main{
             width: 100%;
         }
     }
-    // .left{
-    //     order: 2;
-    // }
     @include media-queries(md){
         @include flex(row, center, flex-start);
         // gap: 20px;
         .left{
             flex: 3;
-            // order: 1;
+            min-width: 600px;
         }
         .right{
             flex: 1;
@@ -59,7 +57,7 @@ main{
 }
 
 section.big_sections{
-    min-height: 90vh;
+    min-height: 80vh;
     @include media-queries(md){
         min-height: auto;
         margin-bottom: 50px;

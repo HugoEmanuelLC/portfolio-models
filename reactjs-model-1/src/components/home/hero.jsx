@@ -4,7 +4,7 @@ export default function Hero() {
             <div className="container_">
                 <div className="hero_left">
                     <figure>
-                        <img src="https://cdn.dribbble.com/users/10264664/screenshots/17342535/media/0d3eaec278b7e7c3bf43dbcc8f76c8f2.jpg?resize=400x300&vertical=center" alt="hero" />
+                        <img src="./src/assets/picture_profil.jpg" alt="hero" />
                     </figure>
 
                     <div className="infos">
