@@ -394,7 +394,7 @@ footer p.copyright, footer .copyright span {
 }
 .projects .projects_list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: 1rem;
 }
 .projects .projects_list .project {
@@ -414,12 +414,57 @@ footer p.copyright, footer .copyright span {
   transform: scale(1.05);
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
 }
-.projects .projects_list .project img {
+.projects .projects_list .project .gallery {
+  position: relative;
+  min-height: 250px;
+  height: 100%;
+  width: 100%;
+}
+.projects .projects_list .project .gallery figure {
+  position: absolute;
   width: 100%;
   height: 100%;
+  display: flex;
+}
+.projects .projects_list .project .gallery figure img {
+  max-width: 250px;
+  width: 100%;
+  height: 100%;
+  margin: auto;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 10px;
+}
+.projects .projects_list .project .gallery .active {
+  z-index: 10;
+}
+.projects .projects_list .project .gallery .btns button {
+  background-color: rgba(10, 12, 12, 0.8);
+  padding: 5px;
+  font-weight: 500;
+  position: absolute;
+  z-index: 20;
+  height: 100%;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.projects .projects_list .project .gallery .btns button i {
+  color: #efdfff;
+  font-size: 2rem;
+}
+.projects .projects_list .project .gallery .btns button:hover {
+  background-color: #0b86af;
+}
+.projects .projects_list .project .gallery .btns button:hover i {
+  color: #0e1112;
+}
+.projects .projects_list .project .gallery .btns button.prev {
+  left: 0;
+  border-radius: 0 10px 10px 0;
+}
+.projects .projects_list .project .gallery .btns button.next {
+  right: 0;
+  border-radius: 10px 0 0 10px;
 }
 .projects .projects_list .project .description {
   width: 100%;
