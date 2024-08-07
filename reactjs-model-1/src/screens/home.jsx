@@ -12,36 +12,37 @@ export default function Home() {
             <div className="left">
                 <section className="about">
                     <h3>A propos de moi</h3>
-                    <p>En pleine reconversion professionnel, je suis aujourd'hui à la recherche de mon premier emploi comme développeur.
-
-
-Passionné par la technologie depuis mon plus jeune âge, j'ai décidé de changer de carrière en 2018 pour devenir développeur web.
-
-
-Je sors d'un stage où j'ai eu le plaisir de créer une application Android et IOS de zéro, un réseau social avec authentification, publications entre autres, réalise en React Native Expo et à l’aide Appwrite pour le backend.
-
-
-En plus de devoir configurer le DNS ainsi que la configuration d'un VPS.
-
-
-En pleine reconversion professionnelle, je me suis formé en tant que développeur web apps ces derniers années. Je suis apte à travailler en tant que frontend ainsi qu’en backend. Motivé et prêt à affronter tous les défis.
-
-
-Au cours de ma formation chez Becode (ma 3éme formation), j'ai acquis les compétences techniques nécessaires pour devenir un développeur web compétent. Je maîtrise les langages de programmation HTML, CSS et JavaScript, ainsi que les Framework frontend et backend les plus populaires.
-
-
-Je suis également un développeur web créatif et curieux. J'aime explorer de nouvelles technologies et techniques. Je suis toujours à la recherche de nouvelles façons de coder et de créer des sites web et des applications innovants.
-
-
-Je suis convaincu que j'ai les compétences et la motivation nécessaires pour réussir dans le domaine du développement web. Je suis impatient de mettre mes compétences en pratique et de contribuer à la création de projets stimulants et gratifiants.</p>
+                    <p>C'est quoi l'expérience ? La réalisation de projets différents et faire face aux problèmes rencontrés ? 
+                        Alors oui j'ai un peu plus d'expérience chaque jour qui passe, j'ai réalisé deux formation de développeur web assez intense, 
+                        la premier (web - apps) m'as permis d'entrer dans le monde du code et voir ça complexité, 
+                        la deuxième (web - mobile) plus intense avec une approche pédagogique active, la réalisation de projets en solo ou en équipe et 
+                        un encadrement par des coachs en suivant une deadline précise. 
+                        Cette formation m'a permis de remplir mes lacunes, grâce à elle je me sens à l'aise avec le code et ces concepts. 
+                        Aujourd'hui je n'ai besoin que d'une opportunité pour montrer ce que je peux réaliser, en attendant 
+                        je continue de réaliser mes propres projets comme un système d'authentification en express et mongoDB ou MySql entre autres.</p>
                 </section>
 
                 <Projects />
 
                 <section className='Experience'>
-                    <h3>Experiences professionnelle</h3>
+                    <h3>Experience professionnel</h3>
+                    <h5>Stage Lex&Co - 2024</h5>
+                    <h6>Création d'un réseau social (MVP)</h6>
+                        <p>- <strong className='strong'>React Native</strong> - <strong className='strong'>Expo</strong> 
+                        <br/>- <strong className='strong'>Appwrite</strong> (backend - self hosted)
+                        <br/>- <strong className='strong'>VPS</strong> (configuration) 
+                        <br/>- <strong className='strong'>DNS</strong> (configuration) 
+                        <br/>- <strong className='strong'>Trello</strong> (gestion des tâches)</p>
+
+                    <br />
+                    <h5>Stage ileo - 2022</h5>
+                    <p>Immersion dans le métier du développement web</p>
+
+                    <br />
+                    <h3>Aide à l'emploi</h3>
                     {/* pas d'experience, petit texte de motivation + aides à l'emploi */}
-                    <p>Je suis actuellement à la recherche d'un emploi dans le développement web et mobile. Si vous avez des offres d'emploi ou des conseils à me donner, n'hésitez pas à me contacter.</p>
+                    <p>J'ai droit à quelques aides à l'emploi comme le <strong className='strong'>PFI</strong> ou le <strong className='strong'>plan ACTIVA </strong> 
+                    pour aider l'entreprise qui souhaiterait m'engager.</p>
                 </section>
             </div>
 
@@ -60,15 +61,27 @@ Je suis convaincu que j'ai les compétences et la motivation nécessaires pour r
 
                     <h5>BeCode - 2023 / 2024</h5>
                     <h6>Développeur web - mobile</h6>
-                    <p>Formation en développement web et mobile.</p>
+                    <p>Formation professionnelle avec une approche pédagogique active, réalisation de projets en solo et 
+                        en équipe et un encadrement par des coachs avec expérience dans le métier.<br/>
+                        Perfectionnement de <strong className='strong'>HTML5</strong> et <strong className='strong'>CSS3</strong>, les langages <strong className='strong'>JavaScript</strong> et ça librairie <strong className='strong'>Reactjs</strong> entre autres, 
+                        les accès à des <strong className='strong'>API</strong> externes ou créer par nous mêmes, <strong className='strong'>Nodejs</strong> avec <strong className='strong'>Express</strong>, <strong className='strong'>MongoDB</strong> ou <strong className='strong'>Appwrite</strong>, 
+                        ça été le contenue de cette formation longue de 7 mois en plus 2 mois de stage pour la création d'un petit réseau social (MVP) 
+                        pour <strong className='strong'>Android</strong> et ios à l'aide de <strong className='strong'>React Native</strong> et sont <strong className='strong'>framework</strong> <strong className='strong'>Expo</strong> ainsi que la configuration d'un <strong className='strong'>VPS</strong> et d'un <strong className='strong'>DNS</strong>.</p>
 
                     <h5>Technofutur Tic - 2021/2022</h5>
                     <h6>Développeur web - apps</h6>
-                    <p>Formation en développement web et mobile.</p>
+                    <p>Revoir <strong className='strong'>HTML5/CSS3</strong> ainsi que <strong className='strong'>Bootstrap</strong>, 
+                        apprentissage d'<strong className='strong'>Angular</strong>, <strong className='strong'>PHP</strong>, <strong className='strong'>NodeJS</strong> 
+                        /<strong className='strong'>ExpressJS</strong> et <strong className='strong'>MySql</strong>.</p>
 
                     <h5>CESEP - 2019/2020</h5>
                     <h6>Accès aux métiers du numérique</h6>
-                    <p>Formation en développement web et mobile.</p>
+                    <p>Découverte du hardware, des métiers de bureau, du monde de la 3d et du langage <strong className='strong'>PHP</strong>.</p>
+
+                    <h5>Technofutur Tic - 2018</h5>
+                    <h6>Initiation au développement web</h6>
+                    <p>Apprentissage du langage de balisage <strong className='strong'>HTML5</strong> et du langage de feuille de style <strong className='strong'>CSS3</strong></p>
+
                 </section>
 
                 <section className="langues">

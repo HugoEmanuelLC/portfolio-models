@@ -207,6 +207,11 @@ section.big_sections {
   color: #0e1112;
 }
 
+strong.strong {
+  font-weight: 500;
+  color: #0b86af;
+}
+
 footer {
   background-color: #0e1112;
   display: flex;
@@ -370,8 +375,10 @@ footer p.copyright, footer .copyright span {
   margin-top: 20px;
 }
 .skills ul li {
+  border-bottom: 1px solid #efdfff;
+}
+.skills ul li strong {
   color: #0b86af;
-  border-bottom: 1px solid #0b86af;
 }
 
 .projects .project_head_image {

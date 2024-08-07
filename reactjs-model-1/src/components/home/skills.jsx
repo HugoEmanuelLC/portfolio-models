@@ -5,12 +5,14 @@ export default function Skills() {
             <p>Voici quelques-unes des technologies avec lesquelles je travaille.</p>
 
             <ul>
-                <li>HTML5 - CSS3 - SASS</li>
-                <li>JavaScript - ReactJs - React Native</li>
-                <li>NodeJs - Express</li>
-                <li>PHP</li>
-                <li>MongoDB - MySql</li>
-                <li>GitHub</li>
+                <li><strong>HTML5 - CSS3 - SASS</strong></li>
+                <li><strong>JavaScript - ReactJs - React Native</strong></li>
+                <li><strong>NodeJs - Express</strong></li>
+                <li><strong>PHP</strong></li>
+                <li><strong>MongoDB - MySql</strong></li>
+                <li><strong>GitHub</strong></li>
+                <li><strong>DevOps - VPS (CapRover)</strong></li>
+                <li><strong>DNS (config.)</strong></li>
             </ul>
             
             <br />
@@ -19,15 +21,15 @@ export default function Skills() {
             <h6>Soft skills</h6>
 
             <ul>
-                <li>Écoute active</li>
-                <li>Travail en équipe</li>
-                <li>Esprit d'équipe</li>
-                <li>Capacité à donner et recevoir du feedback</li>
-                <li>Capacité à analyser des problèmes</li>
-                <li>Patience</li>
-                <li>Curiosité</li>
-                <li>Autonomie</li>
-                <li>Capacité à s'adapter aux nouvelles technologies</li>
+                <li><strong>Écoute active</strong></li>
+                <li><strong>Travail en équipe</strong></li>
+                <li><strong>Esprit d'équipe</strong></li>
+                <li><strong>Capacité à donner et recevoir du feedback</strong></li>
+                <li><strong>Capacité à analyser des problèmes</strong></li>
+                <li><strong>Patience</strong></li>
+                <li><strong>Curiosité</strong></li>
+                <li><strong>Autonomie</strong></li>
+                <li><strong>Capacité à s'adapter aux nouvelles technologies</strong></li>
             </ul>
         </section>
     )
