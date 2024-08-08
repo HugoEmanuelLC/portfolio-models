@@ -199,11 +199,11 @@ section.big_sections {
   }
 }
 
-.btn_hover:hover, .hero .hero_right button:hover, .hero .hero_left .infos .links ul li a:hover {
+.btn_hover:hover, .projects .projects_list .project .button:hover, .hero .hero_right button:hover, .hero .hero_left .infos .links ul li a:hover {
   background-color: #0b86af;
   color: #0e1112;
 }
-.btn_hover:hover i, .hero .hero_right button:hover i, .hero .hero_left .infos .links ul li a:hover i {
+.btn_hover:hover i, .projects .projects_list .project .button:hover i, .hero .hero_right button:hover i, .hero .hero_left .infos .links ul li a:hover i {
   color: #0e1112;
 }
 
@@ -310,8 +310,6 @@ footer p.copyright, footer .copyright span {
   display: flex;
   height: 40px;
   width: 40px;
-  border-radius: 50%;
-  overflow: hidden;
 }
 .hero .hero_left .infos .links ul li a {
   background-color: rgba(255, 255, 255, 0.1);
@@ -322,20 +320,115 @@ footer p.copyright, footer .copyright span {
   width: 100%;
   height: 100%;
   font-size: 1.5rem;
+  border-radius: 50%;
+  position: relative;
 }
 .hero .hero_left .infos .links ul li a i {
   color: #efdfff;
+}
+.hero .hero_left .infos .links ul li a::after {
+  background-color: #efdfff;
+  color: #0e1112;
+  border-radius: 5px;
+  position: absolute;
+  bottom: -40px;
+  left: 0;
+  padding: 4px 10px;
+  font-size: 12px;
+  opacity: 0.8;
+  font-weight: 400;
+  transition: 0.2s;
+}
+.hero .hero_left .infos .links ul li:first-child a:hover::after {
+  content: "Mon Linkedin";
+}
+.hero .hero_left .infos .links ul li:nth-child(2) a:hover::after {
+  content: "Mon GitHub";
+}
+.hero .hero_left .infos .links ul li:nth-child(3) a:hover::after {
+  content: "Mon C.V.";
 }
 .hero .hero_right button {
   padding: 10px 20px;
   background-color: rgba(255, 255, 255, 0.1);
   color: #efdfff;
   border-radius: 5px;
-  margin: 20px 0;
+  margin: 50px 0;
   font-weight: 400;
 }
 .hero .hero_right button i {
   font-size: 1.1rem;
+}
+.hero .modal_mail {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column; /* 'row' par défaut */
+  justify-content: center; /* 'center' par défaut */
+  align-items: center; /* 'stretch' par défaut */
+}
+.hero .modal_mail .modal_content {
+  display: flex;
+  flex-direction: column; /* 'row' par défaut */
+  justify-content: center; /* 'center' par défaut */
+  align-items: flex-start; /* 'stretch' par défaut */
+  border-radius: 20px;
+  padding: 20px;
+  background-color: #0b86af;
+  box-shadow: 2px 2px 10px #0e1112;
+}
+.hero .modal_mail .modal_content .close {
+  align-self: flex-end;
+  font-size: 2rem;
+  color: #efdfff;
+  cursor: pointer;
+}
+.hero .modal_mail .modal_content .close:hover {
+  color: #0e1112;
+}
+.hero .modal_mail .modal_content h2 {
+  margin: 10px 0;
+}
+.hero .modal_mail .modal_content label {
+  width: 100%;
+  margin-bottom: 10px;
+  color: #efdfff;
+}
+.hero .modal_mail .modal_content input, .hero .modal_mail .modal_content textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  margin-bottom: 20px;
+  color: #0e1112;
+  font-weight: 400;
+}
+.hero .modal_mail .modal_content textarea {
+  height: 100px;
+}
+.hero .modal_mail .modal_content button {
+  padding: 10px 20px;
+  background-color: #0e1112;
+  color: #efdfff;
+  border-radius: 5px;
+  margin: 10px 0;
+  font-weight: 400;
+}
+.hero .modal_mail .modal_content button:hover {
+  background-color: #efdfff;
+  color: #0e1112;
+}
+.hero .modal_mail .modal_content_off {
+  font-size: 0;
+  transition: 0.3s;
+}
+.hero .modal_mail .modal_content_on {
+  font-size: 1rem;
+  transition: 0.3s;
 }
 @media (min-width: 768px) {
   .hero .container_ {
@@ -344,6 +437,9 @@ footer p.copyright, footer .copyright span {
     justify-content: space-between; /* 'center' par défaut */
     align-items: center; /* 'stretch' par défaut */
     padding: 60px 20px;
+  }
+  .hero .hero_right button {
+    margin: 20px 0;
   }
   .hero .hero_left {
     display: flex;
@@ -478,6 +574,23 @@ footer p.copyright, footer .copyright span {
 .projects .projects_list .project .description p {
   font-size: 1rem;
   letter-spacing: 1px;
+}
+.projects .projects_list .project .button {
+  padding: 10px 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #efdfff;
+  border-radius: 5px;
+  margin: 20px 0;
+}
+.projects .projects_list .project .link_git {
+  -webkit-text-decoration: underline 1px;
+          text-decoration: underline 1px;
+  padding: 10px 0;
+  align-self: flex-start;
+  color: #0b86af;
+}
+.projects .projects_list .project .link_git:hover {
+  color: #efdfff;
 }
 
 .formation p {

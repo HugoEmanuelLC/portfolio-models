@@ -105,6 +105,26 @@
                     letter-spacing: 1px;
                 }
             }
+
+            .button{
+                padding: 10px 20px;
+                background-color: $_color_4_oposite;
+                color: $_color_2;
+                border-radius: 5px;
+                margin: 20px 0;
+                @extend .btn_hover;
+            }
+
+            .link_git{
+                text-decoration: underline 1px;
+                padding: 10px 0;
+                // border: solid 1px $_color_2;
+                align-self: flex-start;
+                color: $_color_3;
+                &:hover{
+                    color: $_color_2;
+                }
+            }
         }
     }
 }

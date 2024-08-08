@@ -42,7 +42,8 @@ export default function Home() {
                     <h6>Projet FMB advantage</h6>
                     <p>Création d'une web app pour la gestion des employés et ces déplacements pour la éligibilité des primes FMB, le tout vérifié par le RH.</p>
                     <p>- <strong className='strong'>React</strong> (frontend)
-                    <br/>- <strong className='strong'>Appwrite</strong> (backend)</p>
+                    <br/>- <strong className='strong'>Appwrite</strong> (backend)
+                    <br/>- <strong className='strong'>Vercel</strong></p>
 
                     <br />
                     <h5>Stage ileo - 2022</h5>
@@ -58,10 +59,11 @@ export default function Home() {
             </div>
 
             <div className="right">
-                <section className='localisation'>
+                <section className='informations'>
                     <h3>Informations</h3>
                     <p>Âge: 38 ans.</p>
                     <p>Ville: Braine-L'Alleud, Belgique.</p>
+                    {/* <p>hugoclavinas@gmail.com</p> */}
 
                 </section>
 
