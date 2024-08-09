@@ -41,8 +41,13 @@ export default function Hero() {
 
 function Modal({setModal}){
     const [email, setEmail] = useState('');
-    const [Objet, setObjet] = useState('');
+    const [emailErrorStyle, setEmailErrorStyle] = useState(true);
+    
+    const [objet, setObjet] = useState('');
+    const [objetErrorStyle, setObjetErrorStyle] = useState(false);
+
     const [message, setMessage] = useState('');
+    const [messageErrorStyle, setMessageErrorStyle] = useState(false);
 
     const [erreur, setErreur] = useState("");
     const [msg, setMsg] = useState(false);
@@ -52,19 +57,33 @@ function Modal({setModal}){
 
         let verifyEmail = true;
 
-        if (email === "" || Objet === "" || message === "") {
+        if (email === "" || objet === "" || message === "") {
             setErreur(true);
             setMsg('Veuillez remplir tous les champs.');
+
+            email === "" || !email.includes('@') || !email.includes('.')  ? setEmailErrorStyle(true) : setEmailErrorStyle(false);
+            objet === "" ? setObjetErrorStyle(true) : setObjetErrorStyle(false);
+            message === "" ? setMessageErrorStyle(true) : setMessageErrorStyle(false);
+            return;
+
         } else {
-            if(verifyEmail){
-                setErreur(false);
-                setMsg('Message envoyé avec succès !');
-            }else{
-                setErreur(true);
-                setMsg('Erreur lors de l\'envoie du message.');
+            if (!email.includes('@') || !email.includes('.')) {
+                setEmailErrorStyle(true)
+                return;
+            } else {
+                // Envoie du mail, tout est ok
+                if(verifyEmail){
+                    setErreur(false);
+                    setMsg('Message envoyé avec succès !');
+                }else{
+                    setErreur(true);
+                    setMsg('Erreur lors de l\'envoie du message.');
+                }
             }
         }
-
+        setEmailErrorStyle(false)
+        setObjetErrorStyle(false)
+        setMessageErrorStyle(false)
         setEmail('');
         setObjet('');
         setMessage('');
@@ -75,18 +94,16 @@ function Modal({setModal}){
         setModal(false);
     }
 
-    let input_style_erreur = {
-        border: '1px solid red'
-    }
-
     return(
         <div className="modal_mail">
             <div className="modal_content modal_content_on">
                 <span className="close" onClick={handleCloseModal}>&times;</span>
+                {msg != "" ? erreur != true ? <p style={{color:'greenyellow'}}>{msg}</p> : <p style={{color:'darkred'}}>{msg}</p> : null}
                 <h2>Nouveau message</h2>
                 <form>
                     <div>
                         <label for="email">Mail:</label>
+                        {emailErrorStyle && <p style={{color:'darkred'}}>Veuillez entrer un email valide.</p>}
                         <input type="email" id="email" name="email" 
                             placeholder="Votre email..."
                             value={email}
@@ -95,21 +112,22 @@ function Modal({setModal}){
                     </div>
                     <div>
                         <label for="name">Objet: </label>
+                        {objetErrorStyle && <p style={{color:'darkred'}}>Veuillez entrer un objet valide.</p>}
                         <input type="text" id="name" name="name" 
                             placeholder="Objet..."
-                            value={Objet}
+                            value={objet}
                             onChange={(e)=>setObjet(e.target.value)}
                         />
                     </div>
                     <div>
                         <label for="message">Message</label>
+                        {messageErrorStyle && <p style={{color:'darkred'}}>Veuillez entrer un message valide.</p>}
                         <textarea id="message" name="message" 
                             placeholder="Votre message..."
                             value={message}
                             onChange={(e)=>setMessage(e.target.value)}
                         ></textarea>
                     </div>
-                    {msg != "" ? erreur != true ? <p style={{color:'white'}}>{msg}</p> : <p style={{color:'black'}}>{msg}</p> : null}
                     <button type="submit" onClick={(e)=>handleSubmit(e)}>Envoyer</button>
                 </form>
             </div>

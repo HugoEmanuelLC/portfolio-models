@@ -199,11 +199,11 @@ section.big_sections {
   }
 }
 
-.btn_hover:hover, .projects .projects_list .project .button:hover, .hero .hero_right button:hover, .hero .hero_left .infos .links ul li a:hover {
+.btn_hover:hover, .projects .projects_list .project a.button:hover, .hero .hero_right button:hover, .hero .hero_left .infos .links ul li a:hover {
   background-color: #0b86af;
   color: #0e1112;
 }
-.btn_hover:hover i, .projects .projects_list .project .button:hover i, .hero .hero_right button:hover i, .hero .hero_left .infos .links ul li a:hover i {
+.btn_hover:hover i, .projects .projects_list .project a.button:hover i, .hero .hero_right button:hover i, .hero .hero_left .infos .links ul li a:hover i {
   color: #0e1112;
 }
 
@@ -496,7 +496,7 @@ footer p.copyright, footer .copyright span {
 .projects .projects_list .project {
   display: flex;
   flex-direction: column; /* 'row' par défaut */
-  justify-content: center; /* 'center' par défaut */
+  justify-content: flex-start; /* 'center' par défaut */
   align-items: center; /* 'stretch' par défaut */
   margin: 1rem;
   padding: 1rem;
@@ -513,6 +513,7 @@ footer p.copyright, footer .copyright span {
   position: relative;
   min-height: 250px;
   height: 100%;
+  max-height: 300px;
   width: 100%;
 }
 .projects .projects_list .project .gallery figure {
@@ -562,6 +563,7 @@ footer p.copyright, footer .copyright span {
   border-radius: 10px 0 0 10px;
 }
 .projects .projects_list .project .description {
+  flex: 1;
   width: 100%;
   margin-top: 1rem;
   font-size: 0.9rem;
@@ -575,7 +577,7 @@ footer p.copyright, footer .copyright span {
   font-size: 1rem;
   letter-spacing: 1px;
 }
-.projects .projects_list .project .button {
+.projects .projects_list .project a.button {
   padding: 10px 20px;
   background-color: rgba(255, 255, 255, 0.1);
   color: #efdfff;

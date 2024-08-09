@@ -82,17 +82,18 @@ function ProjectsItem ({h4, p, gallery, langage, link=null, git={name:'GitHub', 
                     <img src={gallery._3} alt="project" />
                 </figure>
             </div>
+
             <div className="description">
                 <h4>{h4}</h4>
                 <p>{p}</p>
                 <p><strong className='strong'>{langage}</strong></p>
             </div>
 
-            <a className='link_git' href={git.url}>GitHub: {git.name}</a>
-
             <a className='button' href={link}>
                 Voir projet
             </a>
+
+            <a className='link_git' href={git.url}>GitHub: {git.name}</a>
         </div>
     )
 }
