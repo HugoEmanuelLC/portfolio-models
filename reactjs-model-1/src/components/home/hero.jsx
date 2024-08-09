@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
+
+import { sendMail } from '../../scripts/sendMail';
 
 export default function Hero() {
     const [modal, setModal] = useState(false);
@@ -20,9 +22,9 @@ export default function Hero() {
                         <h2>Développeur web apps - mobile</h2>
                         <div className="links">
                             <ul>
-                                <li><a href="https://www.linkedin.com/in/hugoclavinas/"><i class='bx bxl-linkedin-square'></i></a></li>
-                                <li><a href="https://github.com/HugoEmanuelLC/"><i class='bx bxl-github'></i></a></li>
-                                <li><a href="https://hugoclavinas.com/src/documents/CV-2024-hugoclavinas.pdf"><i class='bx bxs-briefcase'></i></a></li>
+                                <li><a href="https://www.linkedin.com/in/hugoclavinas/"><i className='bx bxl-linkedin-square'></i></a></li>
+                                <li><a href="https://github.com/HugoEmanuelLC/"><i className='bx bxl-github'></i></a></li>
+                                <li><a href="https://hugoclavinas.com/src/documents/CV-2024-hugoclavinas.pdf"><i className='bx bxs-briefcase'></i></a></li>
                             </ul>
                         </div>
                     </div>
@@ -31,7 +33,7 @@ export default function Hero() {
                 {modal && <Modal setModal={setModal} />}
 
                 <div className="hero_right">
-                    <button type="button" onClick={openModal}><i class='bx bx-message-rounded-dots'></i> Contactez-moi</button>
+                    <button type="button" onClick={openModal}><i className='bx bx-message-rounded-dots'></i> Contactez-moi</button>
                 </div>
             </div>
         </section>
@@ -41,7 +43,7 @@ export default function Hero() {
 
 function Modal({setModal}){
     const [email, setEmail] = useState('');
-    const [emailErrorStyle, setEmailErrorStyle] = useState(true);
+    const [emailErrorStyle, setEmailErrorStyle] = useState(false);
     
     const [objet, setObjet] = useState('');
     const [objetErrorStyle, setObjetErrorStyle] = useState(false);
@@ -52,10 +54,12 @@ function Modal({setModal}){
     const [erreur, setErreur] = useState("");
     const [msg, setMsg] = useState(false);
 
+    const form = useRef(null);
+
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        let verifyEmail = true;
+        // let verifyEmail = true;
 
         if (email === "" || objet === "" || message === "") {
             setErreur(true);
@@ -72,13 +76,16 @@ function Modal({setModal}){
                 return;
             } else {
                 // Envoie du mail, tout est ok
-                if(verifyEmail){
-                    setErreur(false);
-                    setMsg('Message envoyé avec succès !');
-                }else{
-                    setErreur(true);
-                    setMsg('Erreur lors de l\'envoie du message.');
-                }
+                let verifyEmail = sendMail(form.current)
+                .then((reponse) => {
+                    if(reponse == 'OK'){
+                        setErreur(false);
+                        setMsg('Message envoyé avec succès !');
+                    }else{
+                        setErreur(true);
+                        setMsg('Erreur lors de l\'envoie du message.');
+                    }
+                })
             }
         }
         setEmailErrorStyle(false)
@@ -100,27 +107,27 @@ function Modal({setModal}){
                 <span className="close" onClick={handleCloseModal}>&times;</span>
                 {msg != "" ? erreur != true ? <p style={{color:'greenyellow'}}>{msg}</p> : <p style={{color:'darkred'}}>{msg}</p> : null}
                 <h2>Nouveau message</h2>
-                <form>
+                <form ref={form}>
                     <div>
-                        <label for="email">Mail:</label>
+                        <label htmlFor="email">Mail:</label>
                         {emailErrorStyle && <p style={{color:'darkred'}}>Veuillez entrer un email valide.</p>}
-                        <input type="email" id="email" name="email" 
+                        <input type="email" id="email" name="email_from" 
                             placeholder="Votre email..."
                             value={email}
                             onChange={(e)=>setEmail(e.target.value)}
                         />
                     </div>
                     <div>
-                        <label for="name">Objet: </label>
+                        <label htmlFor="name">Objet: </label>
                         {objetErrorStyle && <p style={{color:'darkred'}}>Veuillez entrer un objet valide.</p>}
-                        <input type="text" id="name" name="name" 
+                        <input type="text" id="name" name="objet_from" 
                             placeholder="Objet..."
                             value={objet}
                             onChange={(e)=>setObjet(e.target.value)}
                         />
                     </div>
                     <div>
-                        <label for="message">Message</label>
+                        <label htmlFor="message">Message</label>
                         {messageErrorStyle && <p style={{color:'darkred'}}>Veuillez entrer un message valide.</p>}
                         <textarea id="message" name="message" 
                             placeholder="Votre message..."

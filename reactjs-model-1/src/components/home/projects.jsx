@@ -34,7 +34,10 @@ export default function Projects() {
                     git={{url:"https://github.com/HugoEmanuelLC/lexandco",name:"Lex&Co."}}/>
 
                 <ProjectsItem h4={"Projet Accenture - FMB"} p={`
-                    Projet de groupe pour la création d'une web apps pour la gestion des employés et ces déplacements via localisation pour la éligibilité des primes FMB, le tout vérifié par le RH.
+                    Projet de groupe pour la création d'une web apps pour la gestion des employés et ces déplacements via localisation pour la éligibilité des primes FMB (MVP), 
+                    le tout vérifié par le RH. Réalisation du frontend à l'aide de React et du backend avec Appwrite, déploiement sur Vercel. 
+                    Accès RH: (user: angelina@jolie.com - password: test1234) 
+                    Accès Employé: (user: hugo@clavinas.com - password: test1234
                     `} gallery={{_1:p2_1, _2:p2_2, _3:p2_3}} langage={`
                     React, Appwrite, Vercel
                     `} 
@@ -69,8 +72,8 @@ function ProjectsItem ({h4, p, gallery, langage, link=null, git={name:'GitHub', 
         <div className="project">
             <div className="gallery">
                 <div className="btns">
-                    <button className='prev' onClick={prevSlide}><i class='bx bx-chevron-left'></i></button>
-                    <button className='next' onClick={nextSlide}><i class='bx bx-chevron-right'></i></button>
+                    <button className='prev' onClick={prevSlide}><i className='bx bx-chevron-left'></i></button>
+                    <button className='next' onClick={nextSlide}><i className='bx bx-chevron-right'></i></button>
                 </div>
                 <figure className={currentSlide === 0 ? 'active' : ''}>
                     <img src={gallery._1} alt="project" />
