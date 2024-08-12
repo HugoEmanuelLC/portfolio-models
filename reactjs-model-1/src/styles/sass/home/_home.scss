@@ -1,3 +1,24 @@
+.skills{
+    ul{
+        @include flex(column, center, flex-start);
+        gap: 8px;
+        margin-top: 20px;
+        li{
+            border-bottom: 1px solid $_color_2;
+            strong{
+                color: $_color_3;
+            }
+        }
+    }
+}
+
+.formation{
+    p{
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+    }
+}
+
 .langues{
     p{
         font-size: 0.9rem;

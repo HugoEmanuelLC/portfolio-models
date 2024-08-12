@@ -110,7 +110,12 @@ main {
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 10px;
+}
+@media (min-width: 768px) {
+  .container_ {
+    padding: 20px;
+  }
 }
 
 .container_structure {
@@ -255,6 +260,26 @@ footer .copyright a:hover {
 footer p.copyright, footer .copyright span {
   font-size: 0.7rem;
   text-transform: uppercase;
+}
+
+.skills ul {
+  display: flex;
+  flex-direction: column; /* 'row' par défaut */
+  justify-content: center; /* 'center' par défaut */
+  align-items: flex-start; /* 'stretch' par défaut */
+  gap: 8px;
+  margin-top: 20px;
+}
+.skills ul li {
+  border-bottom: 1px solid #efdfff;
+}
+.skills ul li strong {
+  color: #0b86af;
+}
+
+.formation p {
+  font-size: 0.9rem;
+  margin-bottom: 20px;
 }
 
 .langues p {
@@ -462,21 +487,6 @@ footer p.copyright, footer .copyright span {
   }
 }
 
-.skills ul {
-  display: flex;
-  flex-direction: column; /* 'row' par défaut */
-  justify-content: center; /* 'center' par défaut */
-  align-items: flex-start; /* 'stretch' par défaut */
-  gap: 8px;
-  margin-top: 20px;
-}
-.skills ul li {
-  border-bottom: 1px solid #efdfff;
-}
-.skills ul li strong {
-  color: #0b86af;
-}
-
 .projects .project_head_image {
   width: 100%;
   height: 300px;
@@ -593,9 +603,4 @@ footer p.copyright, footer .copyright span {
 }
 .projects .projects_list .project .link_git:hover {
   color: #efdfff;
-}
-
-.formation p {
-  font-size: 0.9rem;
-  margin-bottom: 20px;
 }/*# sourceMappingURL=index.css.map */
