@@ -1,6 +1,6 @@
 export default function Formations() {
     return(
-        <section className='formation'>
+        <section className='formation' data-aos="fade-up">
             <h3>Formations</h3>
 
             <h5>BeCode - 2023 / 2024</h5>

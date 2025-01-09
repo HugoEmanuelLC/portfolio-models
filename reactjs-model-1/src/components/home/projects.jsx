@@ -12,15 +12,17 @@ import p3_1 from '../../assets/projects/project3/_1.png';
 import p3_2 from '../../assets/projects/project3/_2.png';
 import p3_3 from '../../assets/projects/project3/_3.png';
 
+import project_picture_head from '../../assets/project_picture_head.jpg';
+
 
 export default function Projects() {
     
     return (
-        <section className='projects'>
+        <section className='projects' data-aos="fade-up">
             <h3>Mes recents projets</h3>
 
             <div className="project_head_image">
-                <img src="./src/assets/project_picture_head.jpg" alt="" />
+                <img src={project_picture_head} alt="" />
             </div>
 
             <div className="projects_list">

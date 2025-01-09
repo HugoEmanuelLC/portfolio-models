@@ -1,6 +1,6 @@
 export default function Experience() {
     return(
-        <section className='Experience'>
+        <section className='Experience' data-aos="fade-up">
             <h3>Experience professionnel</h3>
             <h5>Stage Lex&Co - 2024</h5>
             <h6>Création d'un réseau social (MVP)</h6>
@@ -22,11 +22,14 @@ export default function Experience() {
             <h5>Stage ileo - 2022</h5>
             <p>Immersion dans le métier du développement web.</p>
 
-            {/* <br />
             <br />
-            <h3>Aide à l'emploi</h3>
-            <p>J'ai droit à quelques aides à l'emploi comme le <strong className='strong'>PFI</strong> ou le <strong className='strong'>plan ACTIVA </strong> 
-            pour aider l'entreprise qui souhaiterait m'engager.</p> */}
+            <br />
+            <h3>Aides à l'emploi</h3>
+            <p>- APE 2022</p>
+            <p>- Impulsion 12 mois +</p>
+            <p>- PFI</p>
+            <p>- Sesam</p>
+            <p>- Tremplin 24 +</p>
         </section>
     )
 }

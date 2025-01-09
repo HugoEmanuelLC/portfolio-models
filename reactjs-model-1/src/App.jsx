@@ -1,5 +1,5 @@
 // Dependencies
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import {  Routes, Route } from 'react-router-dom'
 // Components
 import Pub from './components/pub'
@@ -17,6 +17,13 @@ function App() {
   const closeNavbar = () => {
     navBar.current.classList.add('close_nav')
   }
+
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      easing: 'ease-in-out',
+    });
+  }, [])
 
   return (
     <>

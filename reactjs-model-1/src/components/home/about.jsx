@@ -1,16 +1,15 @@
 export default function About() {
     return (
-        <section className="about">
-            <h3>A propos de moi</h3>
-            <p>
-                C'est quoi l'expérience ? La réalisation de projets différents et faire face aux problèmes rencontrés ? 
-                Alors oui j'ai un peu plus d'expérience chaque jour qui passe, j'ai réalisé deux formation de développeur web assez intense, 
-                la premier (web - apps) m'as permis d'entrer dans le monde du code et voir ça complexité, 
-                la deuxième (web - mobile) plus intense avec une approche pédagogique active, la réalisation de projets en solo ou en équipe et 
-                un encadrement par des coachs en suivant une deadline précise. 
-                Cette formation m'a permis de remplir mes lacunes, grâce à elle je me sens à l'aise avec le code et ces concepts. 
-                Aujourd'hui je n'ai besoin que d'une opportunité pour montrer ce que je peux réaliser, en attendant 
-                je continue de réaliser mes propres projets comme un système d'authentification en express et mongoDB ou MySql entre autres.
+        <section className="about" data-aos="fade-up">
+            <h3 data-aos="fade-up">A propos de moi</h3>
+            <p data-aos="fade-up">
+                Développeur web full-stack, je suis à la recherche d'un nouveau challenge au sein d'une équipe dynamique. 
+                Mes deux formations intensives en développement web (web & mobile) m'ont permis d'acquérir une solide base en React, 
+                Node.js / Express js, MongoDB et MySQL. J'ai développé de nombreuses applications web, 
+                notamment un système d'authentification complet, et j'ai appris à travailler efficacement en équipe et à respecter des deadlines strictes. 
+                Mon goût pour l'apprentissage et ma curiosité me poussent à rester constamment à jour sur les dernières technologies. 
+                Je suis convaincu que mes compétences et ma motivation feront de moi un atout précieux pour votre entreprise.
+                N'hésitez pas à consulter mon portfolio pour découvrir mes réalisations.
             </p>
         </section>
     )

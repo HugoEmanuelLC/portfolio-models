@@ -1,6 +1,6 @@
 export default function Skills() {
     return (
-        <section className="skills">
+        <section className="skills" data-aos="fade-up">
             <h3>Compétences</h3>
             <p>Voici quelques-unes des technologies avec lesquelles je travaille.</p>
 

@@ -22,10 +22,11 @@ export default function Home() {
             </div>
 
             <div className="right">
-                <section className='informations'>
+                <section className='informations' data-aos="fade-up">
                     <h3>Informations</h3>
-                    <p>Âge: 38 ans.</p>
+                    <p>Âge: 39 ans.</p>
                     <p>Ville: Braine-L'Alleud, Belgique.</p>
+                    <p>Permis B</p>
                     {/* <p>hugoclavinas@gmail.com</p> */}
 
                 </section>
@@ -33,7 +34,7 @@ export default function Home() {
                 <Skills />
                 <Formations />
 
-                <section className="langues">
+                <section className="langues" data-aos="fade-up">
                     <h3>Langues</h3>
 
                     <h6>Francais</h6>

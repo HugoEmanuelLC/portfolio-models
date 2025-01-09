@@ -2,6 +2,10 @@ import React, { useState, useRef } from 'react';
 
 import { sendMail } from '../../scripts/sendMail';
 
+import profil from '../../assets/photo2.jpg';
+
+import CV from '../../documents/CV-2024-hugoclavinas.pdf'
+
 export default function Hero() {
     const [modal, setModal] = useState(false);
 
@@ -12,19 +16,21 @@ export default function Hero() {
     return (
         <section className="hero big_sections">
             <div className="container_">
-                <div className="hero_left">
-                    <figure>
-                        <img src="./src/assets/picture_profil.jpg" alt="hero" />
-                    </figure>
+                <div className="hero_left" data-aos="fade-up">
+                    {/* <figure>
+                        <img src={profil} alt="hero" />
+                    </figure> */}
+
+                    <div className="imgProfil" style={{backgroundImage: "url(" + profil + ")"}}></div>
 
                     <div className="infos">
                         <h1>Hugo Clavinas</h1>
-                        <h2>Développeur web apps - mobile</h2>
+                        <h2>Développeur web apps - fullstack</h2>
                         <div className="links">
                             <ul>
                                 <li><a href="https://www.linkedin.com/in/hugoclavinas/"><i className='bx bxl-linkedin-square'></i></a></li>
                                 <li><a href="https://github.com/HugoEmanuelLC/"><i className='bx bxl-github'></i></a></li>
-                                <li><a href="https://hugoclavinas.com/src/documents/CV-2024-hugoclavinas.pdf"><i className='bx bxs-briefcase'></i></a></li>
+                                <li><a href={CV}><i className='bx bxs-briefcase'></i></a></li>
                             </ul>
                         </div>
                     </div>
@@ -32,7 +38,7 @@ export default function Hero() {
 
                 {modal && <Modal setModal={setModal} />}
 
-                <div className="hero_right">
+                <div className="hero_right" data-aos="fade-up">
                     <button type="button" onClick={openModal}><i className='bx bx-message-rounded-dots'></i> Contactez-moi</button>
                 </div>
             </div>
